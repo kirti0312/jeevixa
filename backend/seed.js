@@ -1,4 +1,5 @@
-
+const dns = require('dns');
+dns.setDefaultResultOrder('ipv4first');
 const mongoose = require('mongoose');
  const bcrypt = require('bcryptjs');
 const Ward = require('./models/Ward');
@@ -198,4 +199,5 @@ await User.insertMany([
   }
 };
 
-seedDatabase();
+//seedDatabase();
+module.exports = seedDatabase;

@@ -22,8 +22,22 @@ app.use('/api/staff', require('./routes/staff'));
 app.use('/api/alerts', require('./routes/alerts'));
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log('✅ MongoDB Connected'))
+// mongoose.connect(process.env.MONGODB_URI)
+//   .then(() => console.log('✅ MongoDB Connected'))
+//   .catch(err => console.log('❌ MongoDB Error:', err));
+  mongoose.connect(process.env.MONGODB_URI)
+  .then(async () => {
+    console.log('✅ MongoDB Connected');
+    const Ward = require('./models/Ward');
+    const count = await Ward.countDocuments();
+    if (count === 0) {
+      console.log('🌱 Empty database - auto seeding...');
+      const seedDatabase = require('./seed');
+      await seedDatabase();
+    }else {
+  console.log('⚡ Already seeded');
+}
+  })
   .catch(err => console.log('❌ MongoDB Error:', err));
   
   const generateAlerts = require('./alertGenerator');
