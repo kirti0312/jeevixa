@@ -102,7 +102,7 @@ export default function StaffSchedule({ language }) {
   const onDutyCount = staff.filter(s => s.isOnDuty).length;
   const fatigueCount = staff.filter(s => s.fatigueAlert).length;
   const doctorCount = staff.filter(s => s.role === 'doctor').length;
-  const nurseCount = staff.filter(s => s.role === 'nurse').length;
+  //const nurseCount = staff.filter(s => s.role === 'nurse').length;
 
   const inputStyle = {
     width: '100%', padding: '0.65rem 0.875rem',

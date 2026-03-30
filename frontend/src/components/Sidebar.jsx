@@ -37,10 +37,14 @@ export default function Sidebar({ user, theme, language, onLogout, onToggleTheme
   const t = translations[language];
   const [time, setTime] = useState(new Date());
   const [collapsed, setCollapsed] = useState(false);
-  const [bedOccupancy, setBedOccupancy] = useState(70);
-  const [greenScore, setGreenScore] = useState(72);
-  const [criticalCount, setCriticalCount] = useState(3);
-  const [alertCount, setAlertCount] = useState(5);
+  // const [bedOccupancy, setBedOccupancy] = useState(70);
+  // const [greenScore, setGreenScore] = useState(72);
+  // const [criticalCount, setCriticalCount] = useState(3);
+  // const [alertCount, setAlertCount] = useState(5);
+  const [bedOccupancy] = useState(70);
+  const [greenScore] = useState(72);
+  const [criticalCount] = useState(3);
+  const [alertCount] = useState(5);
 
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000);

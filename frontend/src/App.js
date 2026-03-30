@@ -23,7 +23,7 @@ function App() {
   const [user, setUser] = useState(null);
   const [theme, setTheme] = useState('light');
   const [language, setLanguage] = useState('en');
-  const [alerts, setAlerts] = useState([]);
+  //const [alerts, setAlerts] = useState([]);
 
   // Check if user is logged in
   useEffect(() => {
